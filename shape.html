@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My_JavaScript</title>
+	<style>
+		#shape{
+			height: 200px;
+			width: 200px;
+			background-color: red;
+
+		}
+	</style>
+</head>
+<body>
+	<p>Your time: <span id="timeTaken"></span></p>
+	<div id="shape"></div>
+	<script type="text/javascript">
+		var start = new Date().getTime();
+		function makeShapeAppear() {
+			document.getElementById("shape").style.display = "black";
+			start = new Date().getTime();
+		}
+		setTimeout(makeShapeAppear, 1000);
+		document.getElementById("shape").onclick = function () {
+			document.getElementById("shape").style.display = "none";
+			var end = new Date().getTime();
+			var time = (end - start) / 1000;
+			document.getElementById("timeTaken").InnerHTML = timeTaken + "s"
+		}
+	</script>
+
+</body>
+</html>
